@@ -7,8 +7,27 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
     <Grid>
-        <TabControl />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.5*" />
+        </Grid.RowDefinitions>
+        <TextBox Grid.Column="0" Grid.Row="0" />
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.5*" />
+                <ColumnDefinition Width="0.5*" />
+            </Grid.ColumnDefinitions>
+            <Button
+                Content="Начать"
+                Grid.Column="0"
+                HorizontalAlignment="Center" />
+            <Button
+                Content="Настройки"
+                Grid.Column="1"
+                HorizontalAlignment="Center" />
+        </Grid>
+
     </Grid>
+
 </UserControl>
