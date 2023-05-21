@@ -1,8 +1,16 @@
-<Application xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="SoundGUI.App">
+<Application
+    x:Class="SoundGUI.App"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:infrastructure="clr-namespace:SoundGUI.Infrastructure"
+    xmlns:reactiveUi="clr-namespace:ReactiveUI;assembly=ReactiveUI"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Application.Styles>
-        <FluentTheme Mode="Light"/>
+        <FluentTheme Mode="Light" />
     </Application.Styles>
+
+
+    <Application.DataTemplates>
+        <infrastructure:ViewLocator />
+    </Application.DataTemplates>
 </Application>

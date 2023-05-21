@@ -1,6 +1,6 @@
 ﻿using ReactiveUI;
 
-namespace SoundGUI.ViewModels;
+namespace SoundGUI.ViewModels.Base;
 
 public class ViewModelBase : ReactiveObject
 {

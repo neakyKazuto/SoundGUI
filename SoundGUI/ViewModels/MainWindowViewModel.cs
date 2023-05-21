@@ -1,6 +1,21 @@
-﻿namespace SoundGUI.ViewModels;
+﻿using SoundGUI.ViewModels.Base;
+
+namespace SoundGUI.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {
-    public string Greeting => "Welcome to Avalonia!";
+    #region VMDS
+
+    public MainViewModel MainVMD { get; } = new();
+    
+    public SettingsViewModel SettingsVMD { get; } = new();
+    
+    #endregion
+
+    #region Constructos
+
+    public MainWindowViewModel()
+    { }
+
+    #endregion
 }

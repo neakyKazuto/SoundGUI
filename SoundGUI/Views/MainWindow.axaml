@@ -12,16 +12,23 @@
     xmlns:vm="using:SoundGUI.ViewModels"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Design.DataContext>
-        <!--
-            This only sets the DataContext for the previewer in an IDE,
-            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
-        -->
-        <vm:MainWindowViewModel />
-    </Design.DataContext>
 
 
+    <Grid>
+        <TabControl>
 
+            <TabItem Header="Main">
+                <TabItem.Content>
+                    <ContentControl Content="{Binding MainVMD}" />
+                </TabItem.Content>
+            </TabItem>
 
+            <TabItem Header="Settings">
+                <TabItem.Content>
+                    <ContentControl Content="{Binding SettingsVMD}" />
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+    </Grid>
 
 </Window>
