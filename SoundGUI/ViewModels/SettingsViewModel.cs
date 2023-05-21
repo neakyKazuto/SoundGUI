@@ -1,8 +1,10 @@
-﻿using SoundGUI.ViewModels.Base;
+﻿using ReactiveUI.Fody.Helpers;
+using SoundGUI.ViewModels.Base;
 
 namespace SoundGUI.ViewModels;
 
 public class SettingsViewModel : ViewModelBase
 {
-    
+    [Reactive]
+    public int Value { get; set; }
 }
