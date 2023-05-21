@@ -1,4 +1,5 @@
-﻿using SoundGUI.ViewModels.Base;
+﻿using ReactiveUI.Fody.Helpers;
+using SoundGUI.ViewModels.Base;
 
 namespace SoundGUI.ViewModels;
 
@@ -6,9 +7,11 @@ public class MainWindowViewModel : ViewModelBase
 {
     #region VMDS
 
-    public MainViewModel MainVMD { get; } = new();
+    [Reactive]
+    public MainViewModel MainVMD { get; set; } = new();
     
-    public SettingsViewModel SettingsVMD { get; } = new();
+    [Reactive]
+    public SettingsViewModel SettingsVMD { get; set; } = new();
     
     #endregion
 
