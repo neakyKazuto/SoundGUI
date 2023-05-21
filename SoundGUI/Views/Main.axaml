@@ -12,7 +12,12 @@
             <RowDefinition Height="0.5*" />
             <RowDefinition Height="0.5*" />
         </Grid.RowDefinitions>
-        <TextBox Grid.Column="0" Grid.Row="0" />
+
+        <TextBox
+            Grid.Column="0"
+            Grid.Row="0"
+            Text="{Binding Text}" />
+
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.5*" />
@@ -23,11 +28,9 @@
                 Grid.Column="0"
                 HorizontalAlignment="Center" />
             <Button
-                Content="Настройки"
+                Content="Отмена"
                 Grid.Column="1"
                 HorizontalAlignment="Center" />
         </Grid>
-
     </Grid>
-
 </UserControl>
