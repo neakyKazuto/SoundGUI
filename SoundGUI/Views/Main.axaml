@@ -14,23 +14,31 @@
         </Grid.RowDefinitions>
 
         <TextBox
+            AcceptsReturn="True"
             Grid.Column="0"
             Grid.Row="0"
-            Text="{Binding Text}" />
+            Margin="5"
+            Text="{Binding Text}"
+            TextWrapping="Wrap" />
 
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0.5*" />
                 <ColumnDefinition Width="0.5*" />
             </Grid.ColumnDefinitions>
+
             <Button
+                Command="{Binding Start}"
                 Content="Начать"
                 Grid.Column="0"
                 HorizontalAlignment="Center" />
+
             <Button
+                Command="{Binding Cancel}"
                 Content="Отмена"
                 Grid.Column="1"
                 HorizontalAlignment="Center" />
+
         </Grid>
     </Grid>
 </UserControl>
