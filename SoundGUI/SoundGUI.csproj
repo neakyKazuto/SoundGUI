@@ -32,6 +32,9 @@
 
     <ItemGroup>
       <None Remove="Resources\Sound.mp3" />
+    </ItemGroup>
+
+    <ItemGroup>
       <Content Include="Resources\Sound.mp3">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
