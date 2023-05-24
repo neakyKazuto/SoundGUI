@@ -36,16 +36,21 @@ public sealed class SoundService : ISoundService
     {
         for (short i = 0; i < count; i++)
         {
-            await Task.Delay(_fileDuration*i, ct).ContinueWith(_ =>
+            if (i != 0)
+                await Task.Delay(_fileDuration, ct);
+            
+            var soundTask = new Task(() =>
             {
                 _waveOutEvent?.Stop();
                 _waveOutEvent.Volume = Settings.SoundVolume;
+                
                 var reader = new Mp3FileReader(_path);
                 
                 _waveOutEvent?.Init(reader); 
                 _waveOutEvent?.Play();
-                
-            },ct).ConfigureAwait(false);
+            }, ct);
+            
+            soundTask.Start();
         }
     }
 
