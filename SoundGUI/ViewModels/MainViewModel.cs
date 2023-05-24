@@ -4,6 +4,7 @@ using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using SoundGUI.Extensions;
 using SoundGUI.Services;
+using SoundGUI.Stores;
 using SoundGUI.ViewModels.Base;
 
 namespace SoundGUI.ViewModels;
@@ -13,6 +14,8 @@ public class MainViewModel : ViewModelBase
     #region Properties
 
     [Reactive] public string Text { get; set; } = "";
+
+    [Reactive] public SettingsStore Settings { get; set; } = SettingsStore.Instanse;
 
     #endregion
     

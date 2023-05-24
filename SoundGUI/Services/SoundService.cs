@@ -48,6 +48,11 @@ public sealed class SoundService : ISoundService
                 
                 _waveOutEvent?.Init(reader); 
                 _waveOutEvent?.Play();
+
+                Settings.Status = $"{i}/{count}";
+
+                if (Settings.Status == $"{count}/{count}")
+                    Settings.Status = "";
             }, ct);
             
             soundTask.Start();

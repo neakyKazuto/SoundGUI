@@ -15,4 +15,6 @@ public class SettingsStore : ReactiveObject
     #endregion
 
     [Reactive] public float SoundVolume { get; set; } = 0.5f;
+
+    [Reactive] public string Status { get; set; } = "";
 }

@@ -9,8 +9,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="0.5*" />
-            <RowDefinition Height="0.5*" />
+            <RowDefinition Height="0.4*" />
+            <RowDefinition Height="0.4*" />
+            <RowDefinition Height="0.1*" />
         </Grid.RowDefinitions>
 
         <TextBox
@@ -48,6 +49,13 @@
                 VerticalContentAlignment="Center"
                 Width="180" />
 
+        </Grid>
+
+        <Grid
+            Grid.Row="2"
+            Margin="5"
+            VerticalAlignment="Bottom">
+            <TextBlock Text="{Binding Settings.Status}" />
         </Grid>
     </Grid>
 </UserControl>
