@@ -31,7 +31,7 @@ public class MainViewModel : ViewModelBase
         Start = ReactiveCommand.CreateFromObservable(()=>
             Observable.StartAsync(ct => _soundService.PlayTimes(Text.LineCount(),ct)).TakeUntil(Cancel));
         
-        Cancel = ReactiveCommand.Create(_soundService.Cancel, CanCancel);
+        Cancel = ReactiveCommand.Create(_soundService.Cancel);
     }
     #endregion
     
@@ -40,9 +40,6 @@ public class MainViewModel : ViewModelBase
     public IReactiveCommand Start { get; }
     
     public ReactiveCommand<Unit, Unit> Cancel { get; }
-
-    private IObservable<bool> CanCancel => this.WhenAnyObservable(x => x.Start.IsExecuting);
-    
     
     #endregion
 }
