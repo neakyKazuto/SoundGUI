@@ -6,5 +6,5 @@ namespace SoundGUI.ViewModels;
 public class SettingsViewModel : ViewModelBase
 {
     [Reactive]
-    public int Value { get; set; }
+    public float SoundVolume{ get; set; }
 }
