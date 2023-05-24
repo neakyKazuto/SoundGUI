@@ -1,5 +1,5 @@
 <Window
-    Icon="/Assets/avalonia-logo.ico"
+    Icon="/Assets/AppIcon.ico"
     Title="SoundGUI"
     d:DesignHeight="450"
     d:DesignWidth="800"
@@ -17,13 +17,13 @@
     <Grid>
         <TabControl>
 
-            <TabItem Header="Main">
+            <TabItem Header="Главная">
                 <TabItem.Content>
                     <ContentControl Content="{Binding MainVMD}" />
                 </TabItem.Content>
             </TabItem>
 
-            <TabItem Header="Settings">
+            <TabItem Header="Настройки">
                 <TabItem.Content>
                     <ContentControl Content="{Binding SettingsVMD}" />
                 </TabItem.Content>
