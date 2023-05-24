@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reactive;
+﻿using System.Reactive;
 using System.Reactive.Linq;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
@@ -32,6 +31,7 @@ public class MainViewModel : ViewModelBase
             Observable.StartAsync(ct => _soundService.PlayTimes(Text.LineCount(),ct)).TakeUntil(Cancel));
         
         Cancel = ReactiveCommand.Create(_soundService.Cancel);
+        
     }
     #endregion
     
@@ -42,4 +42,5 @@ public class MainViewModel : ViewModelBase
     public ReactiveCommand<Unit, Unit> Cancel { get; }
     
     #endregion
+    
 }
