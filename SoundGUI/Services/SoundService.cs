@@ -9,7 +9,6 @@ namespace SoundGUI.Services;
 
 public sealed class SoundService : ISoundService
 {
-    
     #region Fields
 
     private string _path = "";
@@ -27,17 +26,22 @@ public sealed class SoundService : ISoundService
         SetPath(Path.Combine(Directory.GetCurrentDirectory(), "Resources","Sound.mp3"));
     }
     #endregion
-    
+
+    #region Methods
+
     public async Task PlayTimes(int count, CancellationToken ct = default)
     {
         for (short i = 0; i < count; i++)
         {
             await Task.Delay(_fileDuration*i, ct).ContinueWith(_ =>
             {
-                _waveOutEvent.Stop();
+                _waveOutEvent?.Stop();
+                
                 var reader = new Mp3FileReader(_path);
-                _waveOutEvent.Init(reader); 
-                _waveOutEvent.Play();
+                
+                _waveOutEvent?.Init(reader); 
+                _waveOutEvent?.Play();
+                
             },ct).ConfigureAwait(false);
         }
     }
@@ -60,9 +64,8 @@ public sealed class SoundService : ISoundService
 
     public void Cancel()
     {
-        if (_waveOutEvent != null)
-            _waveOutEvent.Stop();
+        _waveOutEvent?.Stop();
     }
+
+    #endregion
 }
-
-
