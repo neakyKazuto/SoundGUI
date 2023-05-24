@@ -57,6 +57,12 @@ public sealed class SoundService : ISoundService
 
         return true;
     }
+
+    public void Cancel()
+    {
+        if (_waveOutEvent != null)
+            _waveOutEvent.Stop();
+    }
 }
 
 

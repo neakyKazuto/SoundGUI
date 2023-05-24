@@ -8,4 +8,6 @@ public interface ISoundService
     Task PlayTimes(int count, CancellationToken ct = default);
 
     bool SetPath(string path);
+
+    void Cancel();
 }
