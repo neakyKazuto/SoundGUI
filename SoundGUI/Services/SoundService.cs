@@ -78,6 +78,7 @@ public sealed class SoundService : ISoundService
     public void Cancel()
     {
         _waveOutEvent?.Stop();
+        Settings.Status = "";
     }
 
     #endregion
