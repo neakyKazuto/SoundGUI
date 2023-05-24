@@ -1,8 +1,11 @@
-﻿namespace SoundGUI.Services;
+﻿using System.Threading;
+using System.Threading.Tasks;
+
+namespace SoundGUI.Services;
 
 public interface ISoundService
 {
-    void PlayTimes(short count);
+    Task PlayTimes(int count, CancellationToken ct = default);
 
     bool SetPath(string path);
 }

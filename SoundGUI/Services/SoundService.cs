@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using NAudio.Wave;
 
@@ -27,16 +28,17 @@ public sealed class SoundService : ISoundService
     }
     #endregion
     
-    public async void PlayTimes(short count)
+    public async Task PlayTimes(int count, CancellationToken ct = default)
     {
         for (short i = 0; i < count; i++)
         {
-            await Task.Delay(_fileDuration*i).ContinueWith(_ =>
+            await Task.Delay(_fileDuration*i, ct).ContinueWith(_ =>
             {
+                _waveOutEvent.Stop();
                 var reader = new Mp3FileReader(_path);
                 _waveOutEvent.Init(reader); 
                 _waveOutEvent.Play();
-            });
+            },ct).ConfigureAwait(false);
         }
     }
 
