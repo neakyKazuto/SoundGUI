@@ -31,13 +31,22 @@
                 Command="{Binding Start}"
                 Content="Начать"
                 Grid.Column="0"
-                HorizontalAlignment="Center" />
+                Height="60"
+                HorizontalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                HotKey="F11"
+                VerticalContentAlignment="Center"
+                Width="180" />
 
             <Button
                 Command="{Binding Cancel}"
                 Content="Отмена"
                 Grid.Column="1"
-                HorizontalAlignment="Center" />
+                Height="60"
+                HorizontalAlignment="Center"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Width="180" />
 
         </Grid>
     </Grid>
