@@ -3,6 +3,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using NAudio.Wave;
+using SoundGUI.Stores;
 
 
 namespace SoundGUI.Services;
@@ -16,6 +17,8 @@ public sealed class SoundService : ISoundService
     private TimeSpan _fileDuration;
 
     private readonly WaveOutEvent _waveOutEvent = new ();
+    
+    private SettingsStore Settings { get; set; } = SettingsStore.Instanse;
 
     #endregion
 
@@ -36,7 +39,7 @@ public sealed class SoundService : ISoundService
             await Task.Delay(_fileDuration*i, ct).ContinueWith(_ =>
             {
                 _waveOutEvent?.Stop();
-                
+                _waveOutEvent.Volume = Settings.SoundVolume;
                 var reader = new Mp3FileReader(_path);
                 
                 _waveOutEvent?.Init(reader); 
